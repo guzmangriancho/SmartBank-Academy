@@ -12,13 +12,20 @@ public class SavingsAccount extends BankAccount {
         balance += balance * (interestRate / 100);
     }
 
-    @Override
     public String getAccountInfo() {
         StringBuilder sb = new StringBuilder();
-        sb.append(super.getAccountInfo()).append("\n");
-        sb.append("Interest rate: ").append(interestRate).append("%\n")
+        sb.append("SAVINGS ACCOUNT INFO:\n")
+                .append("==============================\n")
+                .append(this).append("\n")
                 .append("==============================");
+        return sb.toString();
+    }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString()).append("\n")
+                .append("Interest rate : ").append(interestRate).append("%");
         return sb.toString();
     }
 }

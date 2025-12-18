@@ -38,12 +38,19 @@ public class BankAccount {
 
     public String getAccountInfo() {
         StringBuilder sb = new StringBuilder();
-                sb.append("ACCOUNT INFO:\n")
+        sb.append("ACCOUNT INFO:\n")
                 .append("==============================\n")
-                .append("Account number: ").append(accountNumber).append("\n")
-                .append("Account holder: ").append(accountHolder).append("\n")
-                .append("Total balance: ").append(String.format("%.2f", balance)).append("€\n")
+                .append(this.toString()).append("\n")
                 .append("==============================");
+        return sb.toString();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Account number: ").append(accountNumber).append("\n")
+                .append("Account holder: ").append(accountHolder).append("\n")
+                .append("Total balance: ").append(String.format("%.2f", balance)).append("€\n");
         return sb.toString();
     }
 }
